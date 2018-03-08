@@ -18,6 +18,11 @@ markdown: kramdown
 exclude: README.md
 theme: jekyll-theme-slate
 
+plugins:
+  - jekyll-feed
+
 # Exclude from processing.
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock
