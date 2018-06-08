@@ -10,7 +10,7 @@ Make sure you have [Ruby](http://www.ruby-lang.org) and [Bundler](http://bundler
 
 Run:
 
-```
+```console
 bundle install
 bundle exec jekyll serve
 ```
