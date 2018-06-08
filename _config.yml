@@ -11,7 +11,7 @@ github_username:  adamant
 encoding: UTF-8
 permalink: /:year/:title
 paginate: 5
-paginate_path: "/page/:num/"
+paginate_path: "/page:num"
 repository: adamant/blog.adamant-lang.org
 
 # Build settings
