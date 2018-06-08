@@ -17,6 +17,7 @@ repository: adamant/blog.adamant.org
 # Build settings
 markdown: kramdown
 incremental: true
+strict_front_matter: false
 theme: jekyll-theme-slate
 
 plugins:
