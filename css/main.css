@@ -4,6 +4,25 @@ body
     font-size: 16px;
 }
 
+pre, pre code, code, .hljs
+{
+    font-family: 'Fira Mono',Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 14px; /* matches the visual size of the body font better */
+    line-height: 1.5;
+    background: #f6f6f6;
+}
+
+code
+{
+    border: 1px solid #eee;
+    color: #333;
+}
+
+pre code
+{
+    border: none;
+}
+
 .container
 {
     max-width: 820px;
