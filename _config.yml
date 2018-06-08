@@ -16,8 +16,8 @@ repository: adamant/blog.adamant-lang.org
 
 # Build settings
 markdown: kramdown
-incremental: true
 incremental: false # jekyll-feed has a bug where it doesn't process tags correctly in incremental
+strict_front_matter: false
 
 plugins:
   - jekyll-feed
