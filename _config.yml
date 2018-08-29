@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Adamant will be a general-purpose language with high performance,
   deterministic safe resource management, and guaranteed thread safety.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://blog.adamant-lang.org" # the base hostname & protocol for your site
+url: "https://blog.adamant-lang.org" # the base hostname & protocol for your site
 twitter_username: AdamantLang
 github_username:  adamant
 encoding: UTF-8
