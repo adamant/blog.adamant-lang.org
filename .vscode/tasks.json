@@ -20,6 +20,12 @@
             "type": "shell",
             "command": "bundle update",
             "problemMatcher": []
+        },
+        {
+            "label": "Bundle Install",
+            "type": "shell",
+            "command": "bundle install",
+            "problemMatcher": []
         }
     ]
 }
