@@ -3,6 +3,9 @@ layout: master
 title: Blog Index
 ---
 <div id="blog">
+    <header>
+        <h1>The Adamant Language Blog</h1>
+    </header>
     {% for post in paginator.posts %}
 		{% include embedded-post.html %}
 	{% endfor %}
