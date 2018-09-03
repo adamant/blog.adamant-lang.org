@@ -8,7 +8,7 @@ author: "Jeff Walker"
 
 The Adamant language has been under development in one form or another since at least August 2016. However, it wasn't until May 2018 that development picked up. In June 2018, additional hours began to be committed to development each week. In all that time, the language, compiler, and website progressed considerably. However, that progress was not documented and shared outside of the commits on the compiler and docs. This is the first of what will hopefully be more frequent updates on progress on the Adamant language. As such, it summarizes all the work to date.
 
-## Current Status
+### Current Status
 
 The Adamant language currently exists mostly as a set of design ideas. Many aspects of this are documented, but other portions remain mostly undocumented. Generally, those portions which more closely follow the precedent set by other languages are the ones that are not well documented. Someone familiar with C# should be able to infer how many of them work. For Adamant to be successful, it needs design, tools, and documentation. The current state of each of these is:
 
@@ -32,7 +32,7 @@ The Adamant language currently exists mostly as a set of design ideas. Many aspe
 
   This post is the first on the blog. With the publishing of this post, the blog has been added as an item in the menu of the main page. Further design work is needed, but the design is sufficient for now. Planned topics include progress updates, language design theory, language critique and evaluation, and discussion of Adamant.
 
-## Deprecated Compiler Attempts
+### Deprecated Compiler Attempts
 
 The Adamant language has gone through a number of attempts at writing a compiler before the current one was started. The goal was to find an approach that would be easy and not waste too much effort writing a bootstrap compiler that would be discarded after the language switched to a self-hosted compiler. These early compilers can be found on GitHub under the [adamant-deprecated organization](https://github.com/adamant-deprecated). The earlier attempts were:
 
@@ -45,11 +45,11 @@ The Adamant language has gone through a number of attempts at writing a compiler
 
 After the failure of the first five attempts, it was decided that creating a self-hosting compiler directly would be more beneficial. This sixth attempt would allow the developer to get experience working in a subset of Adamant from very early which would help to inform the design of the language. It would also prevent wasted effort on a bootstrap compiler written in another language. This compiler started as some C++ to perform a very basic lexing and recursive descent parsing to translate Adamant to C++. It quickly reached a point where it could translate a subset of Adamant that was equivalent to the subset of C++ it was  written in. The compiler code was re-written in Adamant, and the compiler was "self-hosting." However, it didn't do most of what a compiler should do. Rather, it was a simple translation to a subset of C++. This version of the compiler progressed rapidly at first. Eventually, a transition was made from translating to C++ to translating to C. However, it eventually reached a catch-22 point. Functionality like type checking, borrow checking, classes, enums, and other abstraction facilities needed to be implemented. However, the lack of those features was making development incredibly difficult. It was eventually decided that there didn't seem to be a way forward. That is when the current compiler was started.
 
-## [Current Compiler](https://github.com/adamant/adamant.tools.compiler.bootstrap)
+### [Current Compiler](https://github.com/adamant/adamant.tools.compiler.bootstrap)
 
 Taking the lessons from the previous attempts, the [adamant.tools.compiler.bootstrap](https://github.com/adamant/adamant.tools.compiler.bootstrap) project was started. This compiler is written in C# but focuses on a small subset of Adamant using a minimalist, simple approach similar to the "self-hosting" compiler. It does not yet support most of the language features the last compiler did. Instead the focus has been on laying the groundwork for important features like type checking and borrow checking rather than filling out the range of core features like control flow, expressions, and primitive types.
 
-## August 2018
+### August 2018
 
 Progress on Adamant in August of 2018 consisted mostly of:
 
@@ -62,6 +62,6 @@ Progress on Adamant in August of 2018 consisted mostly of:
 * Adding an intermediate representation (IR) layer to the compiler to aid in implementing borrow checking. This is similar to the MIR step in the Rust compiler.
 * Starting to implement borrow checking
 
-## Next Steps
+### Next Steps
 
 The next focus will be implementing basic borrow checking for variables, parameters, and functions.
