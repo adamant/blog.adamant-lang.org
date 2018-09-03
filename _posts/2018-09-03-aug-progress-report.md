@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "August 2018 Progress Report"
-date: 2018-09-03 08:09:10 -0400
+date: 2018-09-03 18:45:00 -0400
 categories: "Progress Report"
 author: "Jeff Walker"
 ---
