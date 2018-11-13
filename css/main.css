@@ -1,3 +1,26 @@
+/*
+Fix issue with scrollbar causing jumping when going between pages.
+On larger screens, we use a trick to shift the html element by the scrollbar width
+so it stays "centered" where it was without the scrollbar.
+On smaller screens, that leaves noticaby more room on the left then right, so
+we don't do that. We just force the scrollbar.
+*/
+@media (min-width: 768px)
+{
+    html
+    {
+        margin-left: calc(100vw - 100%);
+        margin-right: 0;
+    }
+}
+@media (max-width: 767px)
+{
+    html
+    {
+        overflow-y: scroll;
+    }
+}
+
 body
 {
     font-family: 'Catamaran',"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -33,17 +56,21 @@ pre code
     margin: 0 auto 0 auto;
 }
 
-.site-header ul
+.site-header ul,
+.blog-header ul
 {
     padding: 0;
+    display: inline-block;
 }
 
-.site-header li
+.site-header li,
+.blog-header li
 {
     list-style-type: none;
 }
 
-.site-header .menu
+.site-header .menu,
+.blog-header .menu
 {
     text-align: center;
 }
@@ -56,12 +83,14 @@ pre code
     }
 }
 
-.site-header .menu li
+.site-header .menu li,
+.blog-header .menu li
 {
-    display: inline;
+    display: inline-block;
 }
 
-.site-header h2
+.site-header h2,
+.blog-header h2
 {
     display: inline;
     font-size: 20px;
@@ -71,7 +100,8 @@ pre code
     margin: 0.55em 0.25em ;
 }
 
-.site-header li.active h2
+.site-header li.active h2,
+.blog-header li.active h2
 {
     border-radius: 5px;
     background-color: #eee;
