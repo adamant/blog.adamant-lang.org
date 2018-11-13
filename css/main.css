@@ -78,7 +78,7 @@ pre code
 {
     .site-header .menu
     {
-        margin-top: 4em;
+        margin-top: 3em;
     }
 }
 
@@ -95,8 +95,8 @@ pre code
     font-size: 20px;
     font-weight: 500;
     /* Spacing important for background of active item */
-    padding: 0.2em 0.5em ;
-    margin: 0.55em 0.25em ;
+    padding: 0.4em 0.6em;
+    margin: 0.35em 0.15em;
 }
 
 /* Blog header should be a little shorter */
