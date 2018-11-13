@@ -85,7 +85,7 @@ pre code
 .site-header .menu li,
 .blog-header .menu li
 {
-    display: inline-block;
+    display: inline-flex;
 }
 
 .site-header h2,
@@ -97,6 +97,13 @@ pre code
     /* Spacing important for background of active item */
     padding: 0.2em 0.5em ;
     margin: 0.55em 0.25em ;
+}
+
+/* Blog header should be a little shorter */
+.blog-header h2
+{
+    margin-top: 0em;
+    margin-bottom: 0em;
 }
 
 .site-header li.active h2,

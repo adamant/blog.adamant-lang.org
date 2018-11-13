@@ -1,0 +1,36 @@
+---
+layout: page
+title: "Blog Archive"
+sitemap:
+  ignore: true
+---
+<div id="archive">
+	<h1>Blog Archive</h1>
+{% for post in site.posts  %}
+	{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+	{% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
+	{% capture this_month_num %}{{ post.date | date: "%m" }}{% endcapture %}
+	{% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+	{% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
+	{% capture next_month_num %}{{ post.previous.date | date: "%m" }}{% endcapture %}
+
+	{% if forloop.first %}
+		<section class="month">
+			<h2>{{this_month}} {{this_year}}</h2>
+			<ul>
+	{% endif %}
+
+				<li><a href="{{post.url}}" class="internal">{{post.title}}</a></li>
+
+	{% if forloop.last %}
+			</ul>
+		</section>
+	{% elsif this_year != next_year or this_month != next_month %}
+			</ul>
+		</section>
+		<section class="month">
+			<h2>{{next_month}} {{next_year}}</h2>
+			<ul>
+	{% endif %}
+{% endfor %}
+</div>

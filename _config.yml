@@ -9,7 +9,7 @@ url: "https://blog.adamant-lang.org" # the base hostname & protocol for your sit
 twitter_username: AdamantLang
 github_username:  adamant
 encoding: UTF-8
-permalink: /:year/:title
+permalink: /:year/:title/
 paginate: 5
 paginate_path: "/page:num"
 repository: adamant/blog.adamant-lang.org
