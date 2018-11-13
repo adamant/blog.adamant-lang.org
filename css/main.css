@@ -66,7 +66,15 @@ pre code
     display: inline;
     font-size: 20px;
     font-weight: 500;
-    margin: 0.75em;
+    /* Spacing important for background of active item */
+    padding: 0.2em 0.5em ;
+    margin: 0.55em 0.25em ;
+}
+
+.site-header li.active h2
+{
+    border-radius: 5px;
+    background-color: #eee;
 }
 
 .logo-name
