@@ -4,6 +4,7 @@ title: "August 2018 Progress Report"
 date: 2018-08-31 18:45:00 -0400
 tags: ["Progress Report"]
 author: "Jeff Walker"
+modified: 2018-11-15 21:50 -05:00
 ---
 
 The Adamant language has been under development in one form or another since at least August 2016. However, it wasn't until May 2018 that development picked up. In June 2018, additional hours began to be committed to development each week. In all that time, the language, compiler, and website progressed considerably. However, that progress was not documented and shared outside of the commits on the compiler and docs. This is the first of what will hopefully be more frequent updates on progress on the Adamant language. As such, it summarizes all the work to date.
@@ -65,3 +66,5 @@ Progress on Adamant in August of 2018 consisted mostly of:
 ### Next Steps
 
 The next focus will be implementing basic borrow checking for variables, parameters, and functions.
+
+**EDIT 2018-11-15:** Updated URL to Language Reference.
