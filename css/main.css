@@ -24,13 +24,13 @@ we don't do that. We just force the scrollbar.
 body
 {
     font-family: 'Catamaran',"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 pre, pre code, code, .hljs
 {
     font-family: 'Fira Mono',Menlo,Monaco,Consolas,"Courier New",monospace;
-    font-size: 14px; /* matches the visual size of the body font better */
+    font-size: 18px; /* matches the visual size of the body font better */
     line-height: 1.5;
     background: #f6f6f6;
 }
@@ -56,10 +56,17 @@ pre code
     margin: 0 auto 0 auto;
 }
 
+.blog-header hr
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .site-header ul,
 .blog-header ul
 {
     padding: 0;
+    margin-bottom: 0;
 }
 
 .site-header li,
@@ -78,7 +85,7 @@ pre code
 {
     .site-header .menu
     {
-        margin-top: 3em;
+        margin-top: 2.5em;
     }
 }
 
@@ -92,18 +99,11 @@ pre code
 .blog-header h2
 {
     display: inline;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 500;
     /* Spacing important for background of active item */
     padding: 0.4em 0.6em;
-    margin: 0.35em 0.15em;
-}
-
-/* Blog header should be a little shorter */
-.blog-header h2
-{
-    margin-top: 0em;
-    margin-bottom: 0em;
+    margin: 0;
 }
 
 .site-header li.active h2,
@@ -137,7 +137,7 @@ pre code
 .site-footer .legal
 {
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .social-media-list
