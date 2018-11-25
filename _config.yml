@@ -1,5 +1,5 @@
 # Site settings
-title: The Adamant Programming Language
+title: The Adamant Programming Language Blog
 email: site-admin@adamant-lang.org
 description: > # this means to ignore newlines until "baseurl:"
   Adamant will be a general-purpose language with high performance,
