@@ -6,7 +6,7 @@
         {
             "label": "Jekyll Serve",
             "type": "shell",
-            "command": "bundle exec jekyll serve",
+            "command": "bundle exec jekyll serve --future --drafts",
             "problemMatcher": [],
             "presentation": {
                 "echo": true,
