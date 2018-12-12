@@ -27,6 +27,12 @@ body
     font-size: 20px;
 }
 
+pre
+{
+    margin-top: -.75em;
+    margin-bottom: 1em;
+}
+
 pre, pre code, code, .hljs
 {
     font-family: 'Fira Mono',Menlo,Monaco,Consolas,"Courier New",monospace;
@@ -152,4 +158,40 @@ pre code
     list-style-type: none;
     font-size: 18px;
     margin-left: 1ex;
+}
+
+header .meta
+{
+    font-size: 18px;
+}
+
+.h4, h4
+{
+    font-size: 22px;
+}
+
+article, p, .page-nav, li
+{
+	line-height: 1.5em;
+}
+
+article, article p, article ul, article ol, .page-nav
+{
+	margin-bottom: 1.25em;
+}
+
+article p+ul, article p+ol
+{
+	margin-top: -1em;
+}
+
+.nowrap
+{
+    white-space: nowrap;
+}
+
+.footnotes
+{
+    margin-top: 2em;
+    font-size: 18px;
 }
