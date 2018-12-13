@@ -30,3 +30,4 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - _drafts/.git
