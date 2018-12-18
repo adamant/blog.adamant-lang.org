@@ -89,16 +89,16 @@ Although the primitive types are value types, most types in Adamant are referenc
 One more thing before we deal with memory management directly, in Adamant, both objects and variables are immutable by default. For an object to be mutable, its type must be declared with the <code><span class="hljs-keyword">mut</span></code> keyword. To make a variable binding mutable declare it with <code><span class="hljs-keyword">var</span></code> instead of <code><span class="hljs-keyword">let</span></code>. Note that the mutability of objects and variables bindings are independent.
 
 <pre><code class="hljs nohighlight"><span class="hljs-keyword">let</span> numbers1: List[<span class="hljs-keyword">int</span>] = <span class="hljs-keyword">new</span> List(); <span class="hljs-comment">// a list of ints</span>
-<span class="error">numbers.add</span>(<span class="hljs-number">236</span>); <span class="hljs-comment">// ERROR: Can't mutate non-mutable list</span>
-<span class="error">numbers =</span> <span class="hljs-keyword">new</span> List(); <span class="hljs-comment">// ERROR: Can't modify let bindings</span>
+<span class="error">numbers1.add</span>(<span class="hljs-number">236</span>); <span class="hljs-comment">// ERROR: Can't mutate non-mutable list</span>
+<span class="error">numbers1 =</span> <span class="hljs-keyword">new</span> List(); <span class="hljs-comment">// ERROR: Can't modify let bindings</span>
 
 <span class="hljs-keyword">let</span> numbers2: <span class="hljs-keyword highlight">mut</span> List[<span class="hljs-keyword">int</span>] = <span class="hljs-keyword">new</span> List();
-numbers.add(<span class="hljs-number">89</span>); <span class="hljs-comment">// adds 89 to the list</span>
-<span class="error">numbers =</span> <span class="hljs-keyword">new</span> List(); <span class="hljs-comment">// ERROR: Can't modify let bindings</span>
+numbers2.add(<span class="hljs-number">89</span>); <span class="hljs-comment">// adds 89 to the list</span>
+<span class="error">numbers2 =</span> <span class="hljs-keyword">new</span> List(); <span class="hljs-comment">// ERROR: Can't modify let bindings</span>
 
 <span class="hljs-keyword highlight">var</span> numbers3: List[<span class="hljs-keyword">int</span>] = <span class="hljs-keyword">new</span> List();
-<span class="error">numbers.add</span>(<span class="hljs-number">89</span>); <span class="hljs-comment">// ERROR: Can't mutate non-mutable list</span>
-numbers = #[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]; <span class="hljs-comment">// numbers refers to a list of 1, 2, 3</span>
+<span class="error">numbers3.add</span>(<span class="hljs-number">89</span>); <span class="hljs-comment">// ERROR: Can't mutate non-mutable list</span>
+numbers3 = #[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]; <span class="hljs-comment">// numbers refers to a list of 1, 2, 3</span>
 </code></pre>
 
 ## Ownership
