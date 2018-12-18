@@ -13,6 +13,7 @@ permalink: /:year/:title/
 paginate: 5
 paginate_path: "/page:num"
 repository: adamant/blog.adamant-lang.org
+TZ: America/New_York
 
 # Build settings
 markdown: kramdown
