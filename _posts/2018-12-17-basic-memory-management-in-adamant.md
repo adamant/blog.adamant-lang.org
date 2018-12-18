@@ -267,9 +267,9 @@ Occasionally, lifetime relationships exist that can't be specified using just si
 
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) -> <span class="hljs-keyword">int</span></span>
 {
-    <span class="hljs-keyword">let</span> a = <span class="hljs-keyword">new</span> Car(<span class="hljs-number">2017</span>);
-    <span class="hljs-keyword">let</span> b = <span class="hljs-keyword">new</span> Car(<span class="hljs-number">2018</span>);
-    <span class="hljs-keyword">let</span> newer = newer_car(a, b); <span class="hljs-comment">// lifetime $a is inferred</span>
+    <span class="hljs-keyword">let</span> c17 = <span class="hljs-keyword">new</span> Car(<span class="hljs-number">2017</span>);
+    <span class="hljs-keyword">let</span> c18 = <span class="hljs-keyword">new</span> Car(<span class="hljs-number">2018</span>);
+    <span class="hljs-keyword">let</span> newer = newer_car(c17, c18); <span class="hljs-comment">// lifetime $a is inferred</span>
     <span class="hljs-keyword">return</span> newer.model_year;
 }
 </code></pre>
@@ -278,10 +278,10 @@ As you might guess from its name, the `newer_car` function returns the car with 
 
 Lifetime parameters can also be useful for putting borrowed references into the fields of objects.
 
-<pre><code class="hljs nohighlight"><span class="hljs-class"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span>[$<span class="hljs-symbol">boss</span>]</span>
+<pre><code class="hljs nohighlight"><span class="hljs-class"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span>[$<span class="hljs-symbol">manager</span>]</span>
 {
     <span class="hljs-keyword">public</span> <span class="hljs-keyword">let</span> name: String$<span class="hljs-keyword">forever</span>;
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">let</span> boss: Employee?$<span class="hljs-symbol">boss</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">let</span> boss: Employee?$<span class="hljs-symbol">manager</span>;
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">new</span>(<span class="hljs-params">.name, .boss = <span class="hljs-literal">none</span></span>) </span>{ }
 }
