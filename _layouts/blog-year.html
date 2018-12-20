@@ -1,35 +1,46 @@
 ---
 layout: page
 ---
-{% capture year %}{{page.year}}{% endcapture %}
 <section id="blog-{{year}}" class="blog-year">
-	<h1>Year: {{year}}</h1>
-{% for post in site.posts  %}
-	{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-	{% if this_year == year %}
-		{% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
-		{% capture this_month_num %}{{ post.date | date: "%m" }}{% endcapture %}
-		{% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-		{% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
-		{% capture next_month_num %}{{ post.previous.date | date: "%m" }}{% endcapture %}
 
-		{% if forloop.first %}
-			<section class="month">
-				<h2>{{this_month}}</h2>
-				<ul>
-		{% endif %}
-					<li><a href="{{post.url}}" class="internal">{{post.title}}</a></li>
-		{% if this_month != next_month and this_year == next_year %}
-				</ul>
-			</section>
-			<section class="month">
-				<h2>{{next_month}}</h2>
-				<ul>
-		{% endif %}
-	{% endif %}
-	{% if forloop.last %}
-			</ul>
-		</section>
-	{% endif %}
+{% assign drafts = site.posts | where_exp: "post", "post.draft == true" %}
+{% for post in drafts %}
+    {% if forloop.first %}<h1>{{page.year}} Drafts</h1>{% endif %}
+    {% assign post_year = post.date | date: "%Y" | to_integer %}
+    {% if post_year == page.year %}
+        {% assign post_month = post.date | date: "%B" %}
+        {% if post_year != current_year or post_month != current_month %}
+        {% unless forloop.first %}</section></ul>{% endunless %}
+        <section class="month">
+            <h2>{{post_month}}</h2>
+            <ul>
+        {% endif %}
+                    <li><a href="{{post.url}}" class="internal">{{post.title}}</a></li>
+        {% assign current_year = post_year %}
+        {% assign current_month = post_month %}
+        {% if forloop.last %}</section></ul>{% endif %}
+    {% endif %}
+{% endfor %}
+
+<h1>Year: {{page.year}}</h1>
+{% comment %} clear out current year and month, still set from drafts loop {% endcomment %}
+{% assign current_year = null %}
+{% assign current_month = null %}
+{% assign posts = site.posts | where_exp: "post", "post.draft != true" %}
+{% for post in posts %}
+    {% assign post_year = post.date | date: "%Y" | to_integer %}
+    {% if post_year == page.year %}
+        {% assign post_month = post.date | date: "%B" %}
+        {% if post_year != current_year or post_month != current_month %}
+        {% unless forloop.first %}</section></ul>{% endunless %}
+        <section class="month">
+            <h2>{{post_month}}</h2>
+            <ul>
+        {% endif %}
+                    <li><a href="{{post.url}}" class="internal">{{post.title}}</a></li>
+        {% assign current_year = post_year %}
+        {% assign current_month = post_month %}
+        {% if forloop.last %}</section></ul>{% endif %}
+    {% endif %}
 {% endfor %}
 </section>

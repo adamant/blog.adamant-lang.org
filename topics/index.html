@@ -5,19 +5,13 @@ site_title: The Adamant Programming Language
 sitemap:
   ignore: true
 ---
-{% capture tags %}
-  {% for tag in site.tags %}
-    {{ tag[0] | replace: ' ', '_' }}
-  {% endfor %}
-{% endcapture %}
-{% assign sortedtags = tags | split:' ' | sort %}
 <div id="topics">
-	<h1>Topics</h1>
-	<ul>
-		{% for escapedTag in sortedtags %}
-			{% assign tag = escapedTag | replace: '_', ' ' %}
-			{% assign tagSlug = tag | downcase | replace: ' ', '-' | replace: '.', '-' %}
-			<li><a href="/topics/{{tagSlug}}/" class="internal">{{tag}}</a> <span class="count">({{site.tags[tag].size}})</span></li>
-		{% endfor %}
-	</ul>
+    <h1>Topics</h1>
+    <ul>
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+        {% assign tag_name = tag[0] %}
+        <li><a href="/topics/{{tag_name | slugify}}/" class="internal">{{tag_name}}</a> <span class="count">({{tag[1].size}})</span></li>
+    {% endfor %}
+    </ul>
 </div>
