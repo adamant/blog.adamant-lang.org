@@ -13,3 +13,11 @@ layout: master
   </div>
 
 </article>
+<div class="page-nav clearfix">
+	{% if page.next %}
+		<a href="{{ page.next.url }}" class="next">Next: "{{ page.next.title }}" &raquo;</a>
+	{% endif %}
+	{% if page.previous %}
+		<a href="{{ page.previous.url }}" class="previous">&laquo; Previous: "{{ page.previous.title }}"</a>
+	{% endif %}
+</div>

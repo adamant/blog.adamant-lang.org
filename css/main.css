@@ -172,17 +172,43 @@ header .meta
 
 article, p, .page-nav, li
 {
-	line-height: 1.5em;
+    line-height: 1.5em;
 }
 
 article, article p, article ul, article ol, .page-nav
 {
-	margin-bottom: 1.25em;
+    margin-bottom: 1.25em;
 }
 
 article p+ul, article p+ol
 {
-	margin-top: -1em;
+    margin-top: -1em;
+}
+
+.page-nav
+{
+    border-top: 1px solid #dedede;
+    padding-top: 1em;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    margin: 1.5em 0 -3rem 0;
+}
+
+.page-nav .previous, .page-nav .older
+{
+    display: block;
+    float: left;
+    margin-right: 2ex;
+    margin-bottom: 1em;
+}
+
+.page-nav .next, .page-nav .newer
+{
+    display: block;
+    float: right;
+    text-align: right;
+    margin-left: 2ex;
+    margin-bottom: 1em;
 }
 
 .nowrap
