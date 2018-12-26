@@ -170,6 +170,15 @@ header .meta
     font-size: 22px;
 }
 
+@media print
+{
+    a[href].internal:after,
+    a[href].cited:after
+    {
+        content: none;
+    }
+}
+
 article, p, .page-nav, li
 {
     line-height: 1.5em;
@@ -220,4 +229,10 @@ article p+ul, article p+ol
 {
     margin-top: 2em;
     font-size: 18px;
+}
+
+/* footnotes shouldn't have space between them */
+.footnotes li p:last-child
+{
+    margin-bottom: 0;
 }

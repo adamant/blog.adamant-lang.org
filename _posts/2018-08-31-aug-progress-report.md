@@ -26,10 +26,10 @@ The Adamant language currently exists mostly as a set of design ideas. Many aspe
   * [**Design Notes:**](https://github.com/adamant/adamant.language.design/blob/master/book.md)
 
     The language reference, by necessity, leaves out information about why certain design decisions were made. The design notes describe some of these as well as laying out design principles to be followed in the design of the rest of the language. Sections are added to this document as the issues are encountered during language design.
-* [**Website:** adamant-lang.org](https://adamant-lang.org)
+* [**Website:** adamant-lang.org](https://adamant-lang.org){:class="cited"}
 
   The website has been up for some time now. Content is minimal, but it does serve as an entry point to learn about the language. The most useful section is probably the links to the docs. The landing page and tagline need to be improved to focus the marketing message.
-* [**Blog:** blog.adamant-lang.org]()
+* [**Blog:** blog.adamant-lang.org](https://blog.adamant-lang.org){:class="cited"}
 
   This post is the first on the blog. With the publishing of this post, the blog has been added as an item in the menu of the main page. Further design work is needed, but the design is sufficient for now. Planned topics include progress updates, language design theory, language critique and evaluation, and discussion of Adamant.
 

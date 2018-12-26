@@ -9,12 +9,12 @@ site_title: The Adamant Programming Language
 	{% endfor %}
 	<div class="page-nav clearfix">
 		{% if paginator.next_page %}
-			<a href="{{ paginator.next_page_path }}/" class="older">&laquo; Older</a>
+			<a href="{{ paginator.next_page_path }}/" class="older internal">&laquo; Older</a>
 		{% endif %}
 		{% if paginator.previous_page == 1 %}
 			<a href="/blog/" class="newer">Newer »</a>
 		{% elsif paginator.previous_page %}
-			<a href="{{ paginator.previous_page_path }}/" class="newer">Newer &raquo;</a>
+			<a href="{{ paginator.previous_page_path }}/" class="newer internal">Newer &raquo;</a>
 		{% endif %}
 	</div>
 </div>

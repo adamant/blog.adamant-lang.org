@@ -15,9 +15,9 @@ layout: master
 </article>
 <div class="page-nav clearfix">
 	{% if page.next %}
-		<a href="{{ page.next.url }}" class="next">Next: "{{ page.next.title }}" &raquo;</a>
+		<a href="{{ page.next.url }}" class="next internal">Next: "{{ page.next.title }}" &raquo;</a>
 	{% endif %}
 	{% if page.previous %}
-		<a href="{{ page.previous.url }}" class="previous">&laquo; Previous: "{{ page.previous.title }}"</a>
+		<a href="{{ page.previous.url }}" class="previous internal">&laquo; Previous: "{{ page.previous.title }}"</a>
 	{% endif %}
 </div>
