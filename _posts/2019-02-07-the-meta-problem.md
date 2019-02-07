@@ -2,7 +2,7 @@
 layout: post
 title: "The Language Design Meta-Problem"
 date: 2019-02-07 10:00:00 -0500
-tags: []
+tags: ["Language Design", "Compiler Tools"]
 author: "Jeff Walker"
 ---
 I don't like the majority of programming languages available today. Computer programming is a relatively young field, and we still have a long way to go. We haven't dealt with simple problems like [null safety](https://en.wikipedia.org/wiki/Void_safety). There are lots of other [challenging issues with programming languages](https://graydon2.dreamwidth.org/253769.html). Even if we solved those problems, I think we would have much farther to go. Yet, we programmers spend our time on holy wars over matters such as dynamic versus static typing.
