@@ -38,7 +38,7 @@ pre, pre code, code, .hljs
     font-family: 'Fira Mono',Menlo,Monaco,Consolas,"Courier New",monospace;
     font-size: 18px; /* matches the visual size of the body font better */
     line-height: 1.5;
-    background: #f6f6f6;
+    background: #f8f8f8;
 }
 
 code
@@ -194,9 +194,24 @@ article p+ul, article p+ol
     margin-top: -1em;
 }
 
+article .meta
+{
+    color: #BCBCBC;
+}
+
+article .meta .pub-line, article .meta .topic-line
+{
+    text-transform: uppercase;
+}
+
+article .meta .published, article .meta .topics
+{
+    text-transform: none;
+}
+
 .page-nav
 {
-    border-top: 1px solid #dedede;
+    border-top: 2px solid #dedede;
     padding-top: 1em;
     padding-left: 1ex;
     padding-right: 1ex;
