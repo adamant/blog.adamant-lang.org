@@ -10,8 +10,15 @@ sitemap:
     <ul>
     {% assign sorted_tags = site.tags | sort %}
     {% for tag in sorted_tags %}
-        {% assign tag_name = tag[0] %}
-        <li><a href="/topics/{{tag_name | slugify}}/" class="internal">{{tag_name}}</a> <span class="count">({{tag[1].size}})</span></li>
+        <li>
+            {% assign tag_name = tag[0] %}
+            {% assign slug = tag_name | slugify %}
+            <a href="/topics/{{slug}}/" class="internal">{{tag_name}}</a> <span class="count">({{tag[1].size}})</span>
+            {% assign description = site.data.post-tags[slug].description %}
+            {% if description %}
+                <p>{{ description }}</p>
+            {% endif %}
+        </li>
     {% endfor %}
     </ul>
 </div>

@@ -1,0 +1,29 @@
+adamant:
+  description: >
+    Adamant will be a general-purpose language with high performance,
+    deterministic safe resource management, and guaranteed thread safety.
+compiler-tools:
+  description: >
+    Sometimes also called "compiler compilers," compiler tools are tools to ease
+    the implementation of new compilers.
+language-design:
+  description: >
+    The design of computer programming language syntax and semantics.
+language-tooling:
+  description: >
+    The tools such as editors, IDEs, package managers, build systems and
+    debuggers that support a programming language ecosystem.
+memory-management:
+  description: >
+    The techniques used to manage the resource of RAM in a computer program.
+progress-report:
+  description: >
+    Reports on progress made on the design and implementation of the Adamant
+    programming language.
+rust:
+  description: >
+    The Rust programming language.
+types:
+  description: >
+    Data types of programming languages and the type systems that manage them.
+    This also includes type inference.
