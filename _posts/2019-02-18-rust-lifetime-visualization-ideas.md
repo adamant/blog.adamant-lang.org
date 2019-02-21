@@ -55,4 +55,4 @@ There may be better ways of visually representing lifetimes and their relationsh
 
 I'd like to see great tools for Rust development. The [Rust Language Server](https://github.com/rust-lang/rls) project is a good step in that direction. However, Rust tools would benefit from unique features not supported by the standard language server protocol such as the lifetime visualizations I've mocked up. Unfortunately, it appears that VS Code will not allow a plugin to add this kind of visualization unless it completely takes over rendering and editing of the source code. It is likely other editors will be restricted like VS Code. However, I think the Atom editor would allow a plugin to do this. Yet, these diagrams don't seem well suited to generation with the HTML and CSS that Atom is built on. Given the challenges of implementing a visualization like this, it is unlikely I'll ever implement it. I invite others to take my ideas and create great Rust tools.
 
-**EDIT 2019-02-21:**
+**EDIT 2019-02-21:** Added bullet item about accounting for async/await features.
