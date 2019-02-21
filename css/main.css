@@ -184,9 +184,20 @@ article, p, .page-nav, li
     line-height: 1.5em;
 }
 
-article, article p, article ul, article ol, .page-nav
+article,
+article p,
+article ul,
+article ol,
+.page-nav
 {
     margin-bottom: 1.25em;
+}
+
+/* Fix nested lists */
+article ul ol,
+article ol ul
+{
+    margin-bottom: 0;
 }
 
 article p+ul, article p+ol
