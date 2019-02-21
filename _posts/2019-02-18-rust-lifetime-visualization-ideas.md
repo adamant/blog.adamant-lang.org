@@ -4,6 +4,7 @@ title: "Rust Lifetime Visualization Ideas"
 date: 2019-02-18 21:45:00 -0500
 tags: [Rust, "Language Tooling"]
 author: "Jeff Walker"
+modified: 2019-02-21 10:40 -05:00
 ---
 Many people have had the idea that there should be a way to visualize lifetimes in Rust. Indeed, the [Rust Book](https://doc.rust-lang.org/book/) used to include ASCII diagrams of lifetimes in some code examples. When fighting the borrow checker, it would be great if the IDE or editor could automatically provide a visualization of the lifetimes in your code. Perhaps the most beautiful visualization I have seen is in the post ["Graphical depiction of ownership and borrowing in Rust"](https://rufflewind.com/2017-02-15/rust-move-copy-borrow) by Phil Ruffwind. However, those diagrams take up a lot of space. Some of the code samples have blank lines inserted in them to allow space for the diagram. They aren't well suited to use in an IDE or editor. However, others have already worked on editors to visualize Rust lifetimes.
 
@@ -45,6 +46,7 @@ There may be better ways of visually representing lifetimes and their relationsh
 * Is there a way to better connect variable uses to the lifetime visualization? I considered color coding variables to match their lifetimes, but that might mix poorly with standard syntax highlighting.
 * Should there be a visual distinction between a no-op drop vs. ones that have an actual drop function? Remember that the call to drop counts as a use of the variable for NLL.
 * Is there a better way to represent NLL? An earlier iteration of my mockups had the lifetime lines fading away after the last line they were used on. That produced cleaner diagrams, but it was unclear how long variables remained accessible. One idea is to mark the ends of blocks with horizontal white bars. Thus a NLL would fade out at last use, but following the column down to the first white bar blocking the column would indicate the last line the variable could be used on.
+* How should the forthcoming async/await features in Rust affect the lifetime visualization?
 * If there are errors in the lifetime relationships, how can these be indicated in a way that makes the issue clear?
 * Is there a better way to associate borrows with the value they are borrowing? Currently, a borrow only gives an indication of which value it is borrowing on the first row. In an earlier iteration of the design, the color of the borrowed value continued down the middle of the reference lifetime. I wasn't able to make that look good, but perhaps a graphic designer could come up with something better.
 * Will the visualization remain useful for long or complex functions? In particular, there might be many columns for a function with many variables. Ideally, columns could be reused for different variables after the last use of a variable. However, that interferes with indicating the entire scope a variable might be usable in. There may need to be special handling for such situations. Perhaps the lifetime lines of multiple variables can be collapsed into a single column in certain circumstances.
@@ -52,3 +54,5 @@ There may be better ways of visually representing lifetimes and their relationsh
 * Is there some radically different visualization that would be better?
 
 I'd like to see great tools for Rust development. The [Rust Language Server](https://github.com/rust-lang/rls) project is a good step in that direction. However, Rust tools would benefit from unique features not supported by the standard language server protocol such as the lifetime visualizations I've mocked up. Unfortunately, it appears that VS Code will not allow a plugin to add this kind of visualization unless it completely takes over rendering and editing of the source code. It is likely other editors will be restricted like VS Code. However, I think the Atom editor would allow a plugin to do this. Yet, these diagrams don't seem well suited to generation with the HTML and CSS that Atom is built on. Given the challenges of implementing a visualization like this, it is unlikely I'll ever implement it. I invite others to take my ideas and create great Rust tools.
+
+**EDIT 2019-02-21:**
