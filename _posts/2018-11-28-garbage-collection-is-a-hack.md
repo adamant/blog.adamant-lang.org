@@ -2,7 +2,7 @@
 layout: post
 title: "Garbage Collection is a Hack"
 date: 2018-11-28 08:15:00 -0400
-tags: ["Language Design", "Performance", "Memory Management"]
+tags: ["Memory Management", "Language Design", "Performance"]
 author: "Jeff Walker"
 ---
 At the dawn of the heap, there was manual memory management, and it was bad. Programmers were forced to keep track of when to free memory, and whether it had been freed. That distracted from the task of writing domain logic. It made some software architectures neigh impossible because tracking whether memory had been freed is infeasible in them. Predictably, it led to mistakes---the source of many memory leaks, bugs, and crashes. Worst of all were the numerous security vulnerabilities created.
