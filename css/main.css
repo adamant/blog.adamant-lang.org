@@ -52,6 +52,12 @@ pre code
     border: none;
 }
 
+abbr[title]
+{
+    border-bottom: none;
+    text-decoration: underline dotted;
+}
+
 .container
 {
     max-width: 820px;
