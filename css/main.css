@@ -226,6 +226,11 @@ article .meta .published, article .meta .topics
     text-transform: none;
 }
 
+.nowrap
+{
+    white-space: nowrap;
+}
+
 .page-nav
 {
     border-top: 2px solid #dedede;
@@ -252,18 +257,13 @@ article .meta .published, article .meta .topics
     margin-bottom: 1em;
 }
 
-.nowrap
-{
-    white-space: nowrap;
-}
-
+/* footnotes shouldn't have space between them */
 .footnotes
 {
     margin-top: 2em;
     font-size: 18px;
 }
 
-/* footnotes shouldn't have space between them */
 .footnotes li p:last-child
 {
     margin-bottom: 0;
