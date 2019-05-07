@@ -200,8 +200,10 @@ article ol,
 }
 
 /* Fix nested lists */
+article ul ul,
 article ul ol,
-article ol ul
+article ol ul,
+article ol ol
 {
     margin-bottom: 0;
 }
