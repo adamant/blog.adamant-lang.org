@@ -151,7 +151,7 @@ If passing an object to a function always required moving it and thereby losing 
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">fn</span> <span class="hljs-title">main</span>(<span class="hljs-params">console: <span class="hljs-keyword">mut</span> Console</span>)</span>
 {
     <span class="hljs-keyword">let</span> x = <span class="hljs-keyword">mut</span> <span class="hljs-keyword">new</span> String_Builder();
-    append_testing(x);
+    append_testing(<span class="hljs-keyword">mut</span> x);
     console.write_line(x.to_string())
 }
 </code></pre>
