@@ -61,13 +61,13 @@ It may be possible to simplify the declaration of `make_list` to <code><span cla
 Sometimes, the issue is not how the lifetimes of the parameters relate to the return values, but rather how they relate to each other. In those situations, we need to express constraints between lifetimes. Rust uses lifetime subtyping for this. In Rust, `'a: 'b` can be read "the lifetime a outlives the lifetime b". This relationship can be confusing and hard to remember. To see why the subtype relationship implies `a` outlives `b`, consider that a subtype must be substitutable for its supertype. The new approach allows the expression of the same relationships without introducing lifetime parameters.
 
 <pre><code class="hljs nohighlight"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">fn</span> <span class="hljs-title">assign_into</span>(<span class="hljs-params">value: String, variable: <span class="hljs-keyword">ref</span> <span class="hljs-keyword">var</span> String</span>)
-    <span class="hljs-keyword">where</span> <span class="highlight">$value > $*variable</span></span>
+    <span class="hljs-keyword">where</span> <span class="highlight">$value > $^variable</span></span>
 {
-    *variable = value;
+    ^variable = value;
 }
 </code></pre>
 
-The `assign_into` function takes a string and a reference to a variable of type `String` and assigns the string into the variable using the dereference operator `*`. For this to be safe, we must declare that the lifetime of the value we are assigning is greater than the lifetime of the space we are assigning it into. This is done using a generics constraints clause introduce by `where`. The expression directly states the relationship between the variable we are assigning into and the lifetime of the value. Notice that rather than using a subtype relationship, we can use comparison operators on lifetimes. It may also be possible to allow the use of the arrow in where clauses in which case the constraint would become `$value -> *variable`.
+The `assign_into` function takes a string and a reference to a variable of type `String` and assigns the string into the variable using the dereference operator `^`. For this to be safe, we must declare that the lifetime of the value we are assigning is greater than the lifetime of the space we are assigning it into. This is done using a generics constraints clause introduce by `where`. The expression directly states the relationship between the variable we are assigning into and the lifetime of the value. Notice that rather than using a subtype relationship, we can use comparison operators on lifetimes. It may also be possible to allow the use of the arrow in where clauses in which case the constraint would become `$value -> ^variable`.
 
 ## Lifetimes of Borrowed References in Classes
 
@@ -139,6 +139,8 @@ The syntax used above is deliberately verbose. Users often prefer unfamiliar fea
 ## What Now?
 
 There will probably be issues with this approach. Corner cases will have to be addressed. However, this seems like a much better starting point from which to evolve Adamant’s lifetime handling. I feel this could represent a real step forward in the usability of lifetimes in a programming language.
+
+**EDIT 2020-01-27:** Changed dereference operator from `*` to `^`.
 
 [^rust-book]: [*The Rust Programming Language*](https://doc.rust-lang.org/1.31.1/book/) as distributed with Rust v1.31.1
 [^longest]: [*The Rust Programming Language*](https://doc.rust-lang.org/1.31.1/book/) Chap. 10 Section 3 "[Validating References with Lifetimes](https://doc.rust-lang.org/1.31.1/book/ch10-03-lifetime-syntax.html#generic-lifetimes-in-functions)"
