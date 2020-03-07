@@ -4,7 +4,6 @@ title: "Reachability Annotations"
 date: 2020-03-07 09:15:00 -0800
 tags: ["Adamant", "Language Design", "Memory Management"]
 author: "Jeff Walker"
-draft: true
 ---
 Rust's lifetime annotations are one of the more confusing features of the language. It's planned that Adamant will use a memory management strategy similar to Rust's. However, Adamant needs to be easier to use. As such, I'm working hard to come up with a better alternative than lifetime annotations for Adamant. That could be just an easier or clearer syntax for the same thing or a radical rethinking of how reference lifetimes are handled at function calls. The latest incarnation of those ideas is what I'm calling *reachability annotations*.
 
